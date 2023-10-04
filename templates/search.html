@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Employee Records</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        .delete-button, .update-button, .view-button {
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .delete-button {
+            background-color: red;
+        }
+        .update-button {
+            background-color: black;
+        }
+        .view-button {
+            background-color: rgb(72, 0, 254);
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Employee Records</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Full Name</th>
+                <th>Phone Number</th>
+                <th>Date of Birth</th>
+                <th>Nationality</th>
+                <th>Email</th>
+                <th>Company</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Projects</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+                <tr> 
+                    <td>{{ employee.employeeId }}</td>
+                    <td>{{ employee.fullName }}</td>
+                    <td>{{ employee.phone }}</td>
+                    <td>{{ employee.dob }}</td>
+                    <td>{{ employee.nationality }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.company }}</td>
+                    <td>{{ employee.position }}</td>
+                    <td>{{ employee.salary }}</td>
+                    <td>{{ employee.projects }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

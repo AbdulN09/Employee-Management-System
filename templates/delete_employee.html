@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Delete Employee</title>
+</head>
+<body>
+    <h1>Delete Employee</h1>
+    <p>Are you sure you want to delete this employee?</p>
+    <form method="post" action="{% url 'delete' employee.employeeId %}">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>
